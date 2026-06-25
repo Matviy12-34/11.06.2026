@@ -10,13 +10,15 @@
 
 <body>
     <div class="bg-light"></div>
+
     <header>
         <div class="logo"> ⚡Matvii.dev</div>
         <nav>
             <a href="#"> Про мене</a>
             <a href="#services">Послуги</a>
             <a href="#contacts">Контакти</a>
-
+          <a href="#portfolio">Портфоліо</a>
+             <a href="#advantages">Переваги</a>
         </nav>
     </header>
 
@@ -64,11 +66,11 @@
 
         </div>
     </section>
-   
+
     <section class="services" id="services">
         <h2>Що я можу робити</h2>
-        
-        <div class="services-grid">
+
+        <div class="service-grid">
             <div class="service">
                 <span>🎱</span>
                 <h3>Сайти</h3>
@@ -86,13 +88,70 @@
                 <h3> Дизайн</h3>
                 <p>Сучасний вигляд, анімації, адаптація під телефон </p>
             </div>
-
-
         </div>
-
-
-
     </section>
+
+    <section class="portfolio" id="portfolio">
+  <h2> Мої роботи</h2>
+  <div class="portfolio-grid">
+<div class="portfolio-card">Інтернет магазини</div>
+<div class="portfolio-card">Телеграм-бот</div>
+<div class="portfolio-card">Lading Pagess</div>
+</div>
+<section class=""></section>
+    </section>
+
+    <section class="advantages reveal" id="advantages">
+        <h2>Чому обирають мене ?</h2>
+
+        <div class="advantages-grid">
+            <div class="advantages-card">
+                <div class="icons">⚡</div>
+                <h3>Швидка робота</h3>
+                <p>Створенн сучасних</p>
+            </div>
+
+            <div class="advantages-card">
+                <div class="icons">🎨</div>
+                <h3>Унікальний дизайн</h3>
+                <p>Кожен проект</p>
+            </div>
+
+            <div class="advantages-card">
+                <div class="icons">☎️</div>
+                <h3> Адаптивність</h3>
+                <p>Ідеальна робота</p>
+            </div>
+
+            <div class="advantages-card">
+                <div class="icons">🚀</div>
+                <h3>Сучасні технології</h3>
+                <p>Html, Css JavaScript</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Developed by Me
+    </footer>
+
+
+    <script>
+        const reveal = document.querySelectorAll('.reveal')
+
+        function revealElements() {
+            reveal.forEach(element => {
+                const WindowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+
+                if (elementTop < WindowHeight - 100) {
+                    element.classList.add('active')
+                }
+            });
+        }
+        window.addEventListener('scroll', revealElements);
+        window.addEventListener('load', revealElements);
+    </script>
 </body>
 
 </html>

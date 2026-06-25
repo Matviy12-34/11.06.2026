@@ -4,12 +4,33 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, black, blue, purple);
+    background: linear-gradient(-45deg, rgb(0, 0, 0), blue, purple, #11b5d5);
+    background-size: 400% 400%;
     color: white;
     overflow-x: hidden;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+ background-position:100% 50%;
+    
+    }
+
+    100%{
+   background-position: 0% 50%;
+    }
+    
 }
 
 .bg-light {
@@ -143,14 +164,14 @@ nav a:hover {
     overflow: hidden;
 }
 
-.btn::before{
+.btn::before {
     content: "";
     position: absolute;
     top: 0;
     left: 100%;
-    weight: 100%;
+    width: 100%;
     height: 100%;
-      background: linear-gradient(90deg, transparent rgba(255, 255, 255,.4), transparent);
+    background: linear-gradient(90deg, transparent rgba(255, 255, 255, .4), transparent);
 }
 
 .btn:hover {
@@ -262,7 +283,7 @@ nav a:hover {
     padding: 50px;
 }
 
-.stat{
+.stat {
     text-align: center;
     background: #213c7c;
     padding: 22px 8%;
@@ -270,9 +291,158 @@ nav a:hover {
     box-shadow: 10px 25px 50px rgba(233, 229, 229, 0.15);
 }
 
-.stat h3{
+.stat h3 {
     font-size: 48px;
     background: linear-gradient(90deg, #67e8f9, #9333ea, gold);
     -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.services {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.service {
+    padding: 35px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0, 4s;
+}
+
+.service:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service span {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    color: wheat;
+    padding: 35px;
+}
+
+.advantages {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.advantages h2 {
+
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.advantages-card {
+    background: rgba(250, 241, 241, 0.8);
+    border-radius: 25px;
+    padding: 40px 30px;
+    backdrop-filter: .5s;
+}
+
+.advantages-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 50px rgb(22, 187, 212);
+}
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.advantages-card h3 {
+    margin-bottom: 15px;
+    color: #15aaf5;
+}
+
+
+.advantages-card p {
+    color: #0f16f2;
+    line-height: 1.6;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.advantages-card {
+    opacity: 0;
+    transform: translateY(5px);
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(1);
+    }
+}
+
+.reveal.active .advantages-card:nth-child(1) {
+    animation: cardAppear .8s forwards .2s;
+}
+
+.reveal.active .advantages-card:nth-child(2) {
+    animation: cardAppear .8s forwards .4s;
+}
+
+.reveal.active .advantages-card:nth-child(3) {
+    animation: cardAppear .8s forwards .6s;
+}
+
+.reveal.active .advantages-card:nth-child(4) {
+    animation: cardAppear .8s forwards .8s;
+}
+
+.portfolio {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.portfolio-card {
+    padding: 70px 20px;
+    border-radius: 25px;
+    background: rgba(126, 121, 121, 0.8);
+    transition: .4s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 20px 50px rgba(103, 232, 250, 0.3);
 }
